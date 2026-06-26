@@ -1,0 +1,214 @@
+:root {
+  --bg-main: #0d1117;
+  --bg-card: #161b22;
+  --border-color: #30363d;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --accent-blue: #58a6ff;
+  --accent-green: #2ea44f;
+  --accent-red: #da3633;
+  --accent-yellow: #d4a373;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+}
+
+.advanced-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #fff;
+  font-size: 2rem;
+}
+
+/* 📊 Progress Metric Widgets Dashboard */
+.progress-section {
+  background: #21262d;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.progress-bar-track {
+  background: #30363d;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+/* 🔍 Real-time Search Box Utilities */
+.search-container {
+  margin-bottom: 20px;
+}
+.search-input {
+  width: 100%;
+  padding: 12px;
+  background: #21262d;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* 📝 Forms Design Elements Grid Layout */
+.todo-form-advanced {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+.todo-input {
+  padding: 14px;
+  background: #21262d;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+}
+.form-meta-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 10px;
+}
+.meta-select, .meta-input, .meta-date {
+  padding: 10px;
+  background: #21262d;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+.add-btn-full {
+  padding: 12px;
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 📅 Calendar Fixed Configuration Specific Overrides */
+.meta-date {
+  cursor: pointer;
+  position: relative;
+  pointer-events: auto !important;
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(100%);
+  cursor: pointer;
+}
+
+/* 🗂️ Advanced Custom Component Cards view */
+.advanced-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1c2128;
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.priority-high { border-left: 5px solid var(--accent-red); }
+.priority-medium { border-left: 5px solid var(--accent-yellow); }
+.priority-low { border-left: 5px solid var(--accent-green); }
+
+.card-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.todo-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.card-meta-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: #282e38;
+  color: var(--text-secondary);
+}
+.tag-high { color: var(--accent-red); background: rgba(218,54,51,0.1); }
+.tag-medium { color: var(--accent-yellow); background: rgba(212,163,115,0.1); }
+.tag-low { color: var(--accent-green); background: rgba(46,164,79,0.1); }
+
+/* Buttons Action Controls Filter Panels */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.filter-btn {
+  padding: 6px 16px;
+  background: #21262d;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.filter-btn.active {
+  background: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-blue);
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+.action-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.done-btn { background-color: var(--accent-green); color: white; }
+.undo-btn { background-color: #484f58; color: white; }
+.delete-btn { background-color: var(--accent-red); color: white; }
+.empty-msg { color: var(--text-secondary); text-align: center; }
